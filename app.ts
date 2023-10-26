@@ -28,7 +28,7 @@ async function rebuildAllPosts() {
     const offsetVal = i * 50;
     const y = await fetch("https://github.com/");
     const x = await fetch(
-      `https://cactusstore.substack.com//api/v1/archive?sort=new&search=&limit=50&offset=${offsetVal}`
+      `${BASE_URL}api/v1/archive?sort=new&search=&limit=50&offset=${offsetVal}`
     );
     const xResp = (await x.json()) as any;
     if (xResp.length === 0) {
@@ -37,7 +37,10 @@ async function rebuildAllPosts() {
     if (i === 0) {
       console.log("first post: ", xResp[0].post_date);
     }
-    console.log("last post: ", xResp[xResp.findLastIndex((b) => b)].post_date);
+    console.log(
+      "last post: ",
+      xResp[xResp.findLastIndex((b: number) => b)].post_date
+    );
     allPosts.push(xResp);
   }
 
