@@ -1,3 +1,4 @@
 downloaded_posts/*
 node_modules/*
 allPosts.json
+.env
