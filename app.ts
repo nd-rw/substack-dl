@@ -26,7 +26,6 @@ async function rebuildAllPosts() {
   const allPosts = [];
   for (let i = 0; i < 500; i++) {
     const offsetVal = i * 50;
-    const y = await fetch("https://github.com/");
     const x = await fetch(
       `${BASE_URL}api/v1/archive?sort=new&search=&limit=50&offset=${offsetVal}`
     );
