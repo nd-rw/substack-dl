@@ -13,11 +13,15 @@
     "node-fetch": "^3.3.2",
     "puppeteer": "^21.4.0"
   },
+  "trustedDependencies": [
+    "puppeteer"
+  ],
   "devDependencies": {
     "@types/node": "^20.8.9",
-    "bun-types": "latest"
+    "bun-types": "^1.0.7"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "postinstall": "bunx @puppeteer/browsers install chrome@115.0.5790.98 --path $HOME/.cache/puppeteer"
 }
